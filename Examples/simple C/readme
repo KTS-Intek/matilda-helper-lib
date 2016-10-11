@@ -1,0 +1,9 @@
+//compilation
+$ gcc -Wall -c main.c
+$ gcc -Wall -fPIC -c loader.c
+$ gcc -shared -o libloader.so loader.o -ldl
+$ gcc main.o -ldl -o run -L. -lloader -Wl,-rpath,.
+
+Run Command (linux)$ ./run libmatilda-helper-lib.so.1.0.0
+Run Command (windows)>run.exe matilda-helper-lib1.dll
+
